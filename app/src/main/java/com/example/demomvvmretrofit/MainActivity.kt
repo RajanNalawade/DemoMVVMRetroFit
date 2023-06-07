@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         val api = RetrofitHelper.getRetrofitInstance().create(QuoteApi::class.java)
         val repo = QuotesRepository(api)
-        mainViewModel = ViewModelProvider(this, MainViewModelFactory(repo)).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(this, MainViewModelFactory(repo))[MainViewModel::class.java]
 
         mainViewModel.quotes.observe(this, Observer {
             Log.d("QuoteList" , "${it.results.toString()}")

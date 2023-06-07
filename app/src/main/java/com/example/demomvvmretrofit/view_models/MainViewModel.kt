@@ -8,7 +8,7 @@ import com.example.demomvvmretrofit.repository.QuotesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel(val quotesRepository: QuotesRepository) : ViewModel() {
+class MainViewModel(private val quotesRepository: QuotesRepository) : ViewModel() {
     init {
         viewModelScope.launch(Dispatchers.IO){
             quotesRepository.getQuoteList(1)

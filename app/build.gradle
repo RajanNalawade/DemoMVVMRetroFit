@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
 }
 
@@ -70,5 +71,13 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     //retrofit converters
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //activity
+    var activity_version = "1.7.2"
+    implementation "androidx.activity:activity-ktx:$activity_version"
+
+    var hilt_version = "2.46.1"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
 }
