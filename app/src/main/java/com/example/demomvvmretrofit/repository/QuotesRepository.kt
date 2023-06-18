@@ -5,8 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import com.example.demomvvmretrofit.api.QuoteApi
 import com.example.demomvvmretrofit.models.QuoteList
 import retrofit2.Response
+import javax.inject.Inject
 
-class QuotesRepository(private val quoteApi: QuoteApi) {
+class QuotesRepository @Inject constructor(private val quoteApi: QuoteApi) {
 
     private val quotesLiveData = MutableLiveData<QuoteList>()
 
